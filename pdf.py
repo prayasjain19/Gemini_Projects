@@ -34,6 +34,7 @@ def get_text_chunks(text):
     chunks = text_splitter.split_text(text)
     return chunks
 
+#to Add vector in Faiss Index
 def get_vector_store(text_chunks):
     try:
         embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=GOOGLE_API_KEY)
@@ -43,6 +44,7 @@ def get_vector_store(text_chunks):
         st.error(f"Error occurred while creating vector store: {str(e)}")
 
 
+#This is the Prompt we are using
 def get_conversational_chain():
 
     prompt_template = """
@@ -63,7 +65,7 @@ def get_conversational_chain():
     return chain
 
 
-
+# Tasking input from the user
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     
@@ -82,7 +84,8 @@ def user_input(user_question):
     
 
 
-
+#Main Function
+#Using Streamlit
 def main():
     st.set_page_config("Chat PDF")
     st.header("Chat with PDF 💁")
