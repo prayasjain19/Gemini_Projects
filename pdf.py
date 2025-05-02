@@ -12,15 +12,13 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
 load_dotenv()
+#Loading the env files
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 
 
-
-
-
-
+#To read pdf
 def get_pdf_text(pdf_docs):
     text=""
     for pdf in pdf_docs:
