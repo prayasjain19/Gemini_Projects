@@ -86,6 +86,7 @@ def user_input(user_question):
 
 #Main Function
 #Using Streamlit
+#To run the Code -> streamlit run pdf.py
 def main():
     st.set_page_config("Chat PDF")
     st.header("Chat with PDF 💁")
