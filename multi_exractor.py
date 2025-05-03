@@ -34,6 +34,7 @@ st.header("MultiLanguage Invoice Extractor")
 
 input = st.text_input("Input Prompt: ", key="input")
 
+#Upload File
 uploaded_file = st.file_uploader("Choose an image of the invoice...", type=["jpg", "png", "jpeg"])
 image = ""
 if uploaded_file is not None:
@@ -42,10 +43,12 @@ if uploaded_file is not None:
 
 submit = st.button("Tell me about this image")
 
+#input prompt
 input_prompt = """
 You are an expert in understanding invoices. We will upload an image of an invoice, and you will have to answer any question based on the uploaded invoice image.
 """
 
+#submiting response
 if submit:
     image_data = input_image_details(uploaded_file)
     response = get_gemini_response(input_prompt, image_data, input)
