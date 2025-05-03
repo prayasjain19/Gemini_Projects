@@ -8,6 +8,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 
 model = genai.GenerativeModel("gemini-1.5-flash")
 
+#Take the prompt and input from user
 def get_gemini_response(input, image, prompt):
     response = model.generate_content([input, image[0], prompt])
     return response.text
@@ -28,6 +29,7 @@ def input_image_details(uploaded_file):
 
 st.set_page_config(page_title="MultiLanguage Invoice Extractor")
 
+#streamlit
 st.header("MultiLanguage Invoice Extractor")
 
 input = st.text_input("Input Prompt: ", key="input")
