@@ -32,6 +32,7 @@ st.set_page_config(page_title="MultiLanguage Invoice Extractor")
 #streamlit
 st.header("MultiLanguage Invoice Extractor")
 
+#input prompt
 input = st.text_input("Input Prompt: ", key="input")
 
 #Upload File
